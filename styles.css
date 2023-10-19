@@ -1,14 +1,39 @@
 /*  your css code here. If applicable */
-#container{
-	margin : 20px;
+#container {
+    margin: 20px;
+    position: relative; /* Important for positioning pseudo-elements */
 }
-#container ::before{
-	content:"Before Element";
-	color : rgb(255,0,0);
-	font-size : 20px;
+
+#container::before,
+#container::after {
+    content: "Special Text"; /* Content to be displayed before and after the container */
+    color: #f00; /* Red color */
+    font-size: 20px;
+    position: absolute;
 }
-#container ::after{
-	content : "After Element";
-	color : rgb(255,0,0);
-	font-size : 20px;
+
+#container::before {
+    left: -120px; /* Adjust the left position for 'before' text */
 }
+
+#container::after {
+    right: -120px; /* Adjust the right position for 'after' text */
+}
+
+    right: -120px; /* Adjust the right position for 'after' text */
+}
+In this code:
+
+The #container element has a margin of 20px and a relative positioning to serve as the reference for absolute positioning of the pseudo-elements.
+The ::before and ::after pseudo-elements are used to insert content before and after the #container element, respectively.
+The content property is used to specify the text to be displayed.
+color is set to #f00 for red color.
+font-size is set to 20px for the font size of the inserted content.
+position: absolute; is used to position the pseudo-elements.
+left: -120px; and right: -120px; are used to adjust the position of 'before' and 'after' text, respectively. You can adjust the values based on your layout requirements.
+Ensure that this CSS code is in your styles.css file, and it should create the desired layout with special text displayed before and after the container.
+
+
+
+
+
